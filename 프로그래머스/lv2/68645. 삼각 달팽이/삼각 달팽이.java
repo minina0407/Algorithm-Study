@@ -14,9 +14,7 @@ class Solution {
             num++;
         }
             n--; // n 감소
-            
-            if(n==0)
-            {break;}
+    
         
         for(int i = 0; i<n ; i++) 
         {    // 가로 
@@ -25,9 +23,7 @@ class Solution {
             num++;
         }
             n--; // n 감소
-            
-            if(n==0)
-            {break;}
+   
          
         for(int i = 0; i<n ; i++) 
         {    // 대각선
@@ -37,9 +33,7 @@ class Solution {
             num++;
         }
             n--; // n 감소
-            
-            if(n==0)
-            {break;}
+
         
     }   
         //2차원 배열을 1차원 배열로
