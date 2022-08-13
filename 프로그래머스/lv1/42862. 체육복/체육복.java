@@ -12,8 +12,9 @@ class Solution {
         for(int i=0; i<lost.length; i++){
             // 도난 당한 학생들 중 여벌 옷 갖고 있는 학생이 도난 당한 경우 
             for(int j=0; j<reserve.length; j++){
-                if(lost[i]==reserve[j]){ //도난 당한 학생 == 여벌옷 가져온 학생
-                    lost[i] = reserve[j] = -1; //-1로 초기화 -> 빌려줄 수 없도록 설정 
+                if(lost[i]==reserve[j]){ //도난 당한 학생이 여벌옷 가져온 학생안 경우는 빌려줄 수 없음 : 자기가 입음
+                    lost[i] = -1; 
+                    reserve[j] = -1; //-1로 초기화 -> 빌려줄 수 없도록 설정 
                     count++; // 빌린 학생 수 증가 
                     break;
                 }
