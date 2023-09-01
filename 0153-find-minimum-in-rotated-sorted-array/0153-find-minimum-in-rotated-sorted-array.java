@@ -1,15 +1,22 @@
-import java.util.Deque;
-import java.util.ArrayDeque;
 class Solution {
- public  int findMin(int[] nums) { // nums : 로테이션된 배열
-        Deque<Integer> dequeue = new ArrayDeque<>();
-        int min = nums[0];
+    public int findMin(int[] nums) {
+        int left = 0, right = nums.length - 1;
 
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[i] < min) {
-                min = nums[i];
+        while (left  < right ) {
+            int mid = left + ( right - left ) / 2;
+
+            if (nums[mid] < nums[ right ]) {
+                // 왼쪽에 최솟값이 존재
+                right = mid;
+            } else if (nums[mid] > nums[ right ]) {
+                //  오른쪽에 최솟값이 존재
+               left  = mid + 1;
+            } else {
+                // 같을떄,
+                 right--;
             }
         }
-        return min;
+
+        return nums[left];
     }
 }
