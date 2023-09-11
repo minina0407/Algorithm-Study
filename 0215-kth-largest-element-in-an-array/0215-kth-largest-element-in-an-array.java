@@ -6,7 +6,7 @@ class Solution {
             return 0; 
         }
         
-        // 우선순위 큐 ( 내림차순 )
+        // 우선순위 큐
         PriorityQueue<Integer> minHeap = new PriorityQueue<>((a, b) -> a - b);
 
         for (int num : nums) {
