@@ -6,16 +6,17 @@ class Solution {
             return 0; 
         }
         
-        // 우선순위 큐
-        PriorityQueue<Integer> minHeap = new PriorityQueue<>((b,a) -> b -a );
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a, b) -> b - a);
 
         for (int num : nums) {
-            minHeap.offer(num);
-            if (minHeap.size() > k) {
-                minHeap.poll(); // 큐의 크기가 k를 초과하면 가장 작은 요소 제거
-            }
+            maxHeap.offer(num);
+        }
+        
+        while (k > 1) {
+            maxHeap.poll(); // 큐에서 큰 요소를 제거하여 k-1번째로 큰 요소 찾기
+            k--;
         }
 
-        return minHeap.poll(); // k번째로 큰 요소 반환
+        return maxHeap.poll(); // k번째로 큰 요소 반환
     }
 }
