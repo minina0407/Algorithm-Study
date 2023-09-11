@@ -14,8 +14,9 @@ class Solution {
         PriorityQueue<int[]> minHeap = new PriorityQueue<>(
             (a, b) -> a[0] + a[1] - b[0] - b[1]
         );
-        
-        for (int i = 0; i < Math.min(nums1.length, k); i++) {
+        int sizeOfNum1=  Math.min(nums1.length, k);
+
+        for (int i = 0; i <sizeOfNum1; i++) {
             minHeap.offer(new int[]{nums1[i], nums2[0], 0});
         }
         
@@ -25,7 +26,11 @@ class Solution {
             
             if(cur[2] == nums2.length - 1) continue;
             
-            minHeap.offer(new int[]{cur[0], nums2[cur[2]+1], cur[2]+1});
+            // 현재 쌍에서 nums1의 값과 인덱스는 그대로 유지하고, nums2의 인덱스만 1 증가시킨다.
+           int nextNums2Index = cur[2] + 1;
+
+            // 같은 nums1 값과 다음 nums2 값을 짝지어서 minHeap에 추가한다.
+            minHeap.offer(new int[]{cur[0], nums2[nextNums2Index], nextNums2Index});
         }
         
         return result;
