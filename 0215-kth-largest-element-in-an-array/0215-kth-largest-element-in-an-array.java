@@ -7,7 +7,7 @@ class Solution {
         }
         
         // 우선순위 큐
-        PriorityQueue<Integer> minHeap = new PriorityQueue<>((a, b) -> a - b);
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>((b,a) -> b -a );
 
         for (int num : nums) {
             minHeap.offer(num);
