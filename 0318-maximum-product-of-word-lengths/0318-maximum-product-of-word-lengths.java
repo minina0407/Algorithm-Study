@@ -1,4 +1,6 @@
 class Solution {
+    //for문이 아닌 비트마스크 이용해서 
+    // 문자열을 비교한 이유는 for문으로 하면 시간초과나기때문
     public int maxProduct(String[] words) {
         int max = 0;
         for(int i = 0 ; i< words.length ; i++){
