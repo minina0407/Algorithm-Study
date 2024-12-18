@@ -12,7 +12,7 @@ class Solution {
         
         // 예외 처리 
         if( n <= 0 )  return false;
-        
+
         // n이 1이 될때까지 div = 0 인지 확인 
         while(n > 1 ){
         
